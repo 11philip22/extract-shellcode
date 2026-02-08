@@ -1,5 +1,10 @@
 # extract-shellcode
 
+[![Crates.io](https://img.shields.io/crates/v/cyberdrop-client.svg)](https://crates.io/crates/cyberdrop-client)
+![OS: Windows only](https://img.shields.io/badge/OS-Windows%20only-0078D6?logo=windows&logoColor=white)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/woldp001/guerrillamail-client-rs/pulls)
+
 Small Rust toolkit for pulling shellcode out of a Windows PE and (optionally) executing it in-memory for quick validation.
 
 ## components
@@ -33,6 +38,11 @@ The runner prints the byte count and first few bytes before executing. Execution
 - The tester does not apply mitigations (no DEP/CFG bypass), so only run known-safe shellcode.
 - CI/tests are not provided; use `cargo clippy` and `cargo fmt` locally if desired.
 
+## Support
+
+If this crate saves you time or helps your work, support is appreciated:
+
+[![Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/11philip22)
 
 ## License
-This project is licensed under the MIT License - see the [license](license) file for details.
+This project is licensed under the MIT License; see the [license](license) file for details.
