@@ -1,6 +1,6 @@
 # extract-shellcode
 
-[![Crates.io](https://img.shields.io/crates/v/cyberdrop-client.svg)](https://crates.io/crates/cyberdrop-client)
+[![Crates.io](https://img.shields.io/crates/v/extract-shellcode.svg)](https://crates.io/crates/extract-shellcode)
 ![OS: Windows only](https://img.shields.io/badge/OS-Windows%20only-0078D6?logo=windows&logoColor=white)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/woldp001/guerrillamail-client-rs/pulls)

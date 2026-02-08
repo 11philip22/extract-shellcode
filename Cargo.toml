@@ -7,6 +7,21 @@ description = "Small Rust toolkit for pulling shellcode out of a Windows PE and 
 license = "MIT"
 repository = "https://github.com/11philip22/extract-shellcode"
 
+keywords = [
+  "shellcode",
+  "windows",
+  "pe",
+  "portable-executable",
+  "reverse-engineering",
+]
+
+categories = [
+  "command-line-utilities",
+  "development-tools::debugging",
+  "os::windows-apis",
+  "parsing",
+]
+
 [dependencies]
 anyhow = "1.0.100"
 clap = { version = "4.5.54", features = ["derive"] }
