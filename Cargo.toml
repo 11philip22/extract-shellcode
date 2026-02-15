@@ -1,6 +1,6 @@
 [package]
 name = "extract-shellcode"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 
 description = "Small Rust toolkit for pulling shellcode out of a Windows PE and (optionally) executing it in-memory"

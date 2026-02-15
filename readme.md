@@ -38,6 +38,16 @@ The runner prints the byte count and first few bytes before executing. Execution
 - The tester does not apply mitigations (no DEP/CFG bypass), so only run known-safe shellcode.
 - CI/tests are not provided; use `cargo clippy` and `cargo fmt` locally if desired.
 
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/cool-feature`)
+3. Commit your changes (`git commit -m 'Add some cool feature'`)
+4. Push to the branch (`git push origin feature/cool-feature`)
+5. Open a Pull Request
+
 ## Support
 
 If this crate saves you time or helps your work, support is appreciated:
