@@ -1,27 +1,40 @@
-# extract-shellcode
+<p align="center">
+  <img src="assets/hero-banner.png" alt="hero pane" width="980">
+</p>
 
-[![Crates.io](https://img.shields.io/crates/v/extract-shellcode.svg)](https://crates.io/crates/extract-shellcode)
-![OS: Windows only](https://img.shields.io/badge/OS-Windows%20only-0078D6?logo=windows&logoColor=white)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/woldp001/guerrillamail-client-rs/pulls)
+<p align="center">
+  <a href="https://crates.io/crates/extract-shellcode"><img src="https://img.shields.io/badge/cargo_install-extract--shellcode-3B82F6?style=for-the-badge&logo=rust&logoColor=white" alt="cargo install"></a>
+  <a href="https://www.microsoft.com/windows"><img src="https://img.shields.io/badge/OS-Windows%20only-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows only"></a>
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-8B5CF6?style=for-the-badge" alt="MIT License"></a>
+  <a href="https://github.com/woldp001/guerrillamail-client-rs/pulls"><img src="https://img.shields.io/badge/PRs-Welcome-22C55E?style=for-the-badge" alt="PRs Welcome"></a>
+</p>
 
-Small Rust toolkit for pulling shellcode out of a Windows PE and (optionally) executing it in-memory for quick validation.
+<p align="center">
+  <a href="#components">Components</a> · <a href="#prerequisites">Prerequisites</a> · <a href="#building">Building</a> · <a href="#usage">Usage</a> · <a href="#notes-and-limitations">Notes &amp; Limitations</a> · <a href="#contributing">Contributing</a> · <a href="#support">Support</a> · <a href="#license">License</a>
+</p>
 
-## components
+---
+
+## Components
 - `extract-shellcode`: reads a PE, finds the `.text` section, and uses a linker map file to decide how many bytes to keep.
 - `test-shellcode`: loads a binary blob, allocates executable memory with `VirtualAlloc` on Windows, and jumps to it.
 
-## prerequisites
+## Prerequisites
 - Rust toolchain (edition 2024).
 - Windows for `test-shellcode` execution (other platforms bail out).
 - A PE executable and its corresponding `.map` file; the map line for `.text` should look like `0001:00000000 00000XXXH .text CODE`.
 
-## building
+## Instalation
+```
+cargo install extract-shellcode
+```
+
+## Building
 ```bash
 cargo build
 ```
 
-## usage
+## Usage
 Extract shellcode from a PE using its map file:
 ```bash
 cargo run --bin extract-shellcode -- -e path\\to\\program.exe -m path\\to\\program.map -o shellcode.bin
@@ -33,7 +46,7 @@ cargo run --bin test-shellcode -- -i shellcode.bin
 ```
 The runner prints the byte count and first few bytes before executing. Execution uses RWX pages; use only in a controlled environment.
 
-## notes and limitations
+## Notes and limitations
 - The extractor looks for the first `.text` section named exactly `.text` and trusts the map file length; malformed inputs will error out.
 - The tester does not apply mitigations (no DEP/CFG bypass), so only run known-safe shellcode.
 - CI/tests are not provided; use `cargo clippy` and `cargo fmt` locally if desired.
@@ -55,4 +68,5 @@ If this crate saves you time or helps your work, support is appreciated:
 [![Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/11philip22)
 
 ## License
-This project is licensed under the MIT License; see the [license](license) file for details.
+
+This project is licensed under the MIT License; see the [license](https://opensource.org/licenses/MIT) for details.
